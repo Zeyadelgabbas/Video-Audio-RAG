@@ -161,7 +161,11 @@ venv.bak/
 data/
 Assets/
 .Assets
-assets/
+asset
+video_test.mp4
+
+.wav
+.mp4
 # Spyder project settings
 .spyderproject
 .spyproject

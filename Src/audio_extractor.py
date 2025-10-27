@@ -81,7 +81,7 @@ class AudioExtractor:
                 start_time = start_ms / 1000
                 end_time = end_ms / 1000
                 
-                chunks.append((chunk_path,start_time,end_time))
+                chunks.append((chunk_path,start_time,end_time,str(audio_path.stem)))
                 chunk.export(str(chunk_path),format="wav")
 
             logging.info(f"audio file {str(audio_path)} splitted!")
@@ -113,7 +113,7 @@ if __name__ == "__main__":
     extractor = AudioExtractor()
     
     # Test with a video file
-    video = Path("video_test.mp4")
+    video = Path("test_video.mp4")
     if video.exists():
         audio = extractor.extract_audio(video)
         chunks = extractor.split_audio(audio)
