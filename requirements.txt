@@ -1,0 +1,11 @@
+openai
+langchain_openai
+langchain
+openai-whisper
+chromadb
+streamlit
+python-dotenv
+moviepy == 1.0.3
+pydub
+tiktoken
+sqlalchemy
