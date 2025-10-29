@@ -228,6 +228,26 @@ class VectorStore:
         except Exception as e:
             logging.error(f" Error gettin states : {e}")
             return {'total_chunks': 0, 'unique_videos': 0, 'video_names': []}
+ 
+    def clear_all_data(self):
+        """
+        Delete ALL data from the vector store.
+        
+        """
+        try:
+            results = self.vectorstore.get()
+            
+            if results and results['ids']:
+                self.vectorstore.delete(ids=results['ids'])
+                logging.info(f"Cleared all {len(results['ids'])} chunks from vector store")
+                return True
+            else:
+                logging.info("Vector store is already empty")
+                return True
+                
+        except Exception as error:
+            logging.error(f"Error clearing vector store: {error}")
+            return False
 
 
 # Example usage (for testing):
@@ -274,3 +294,5 @@ if __name__ == "__main__":
     stats = vector_store.get_collection_stats()
 
     print(f"\nStats: {stats}")
+
+    vector_store.clear_all_data()
