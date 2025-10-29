@@ -34,8 +34,8 @@ class Transcriber:
                 'start_time': start_time,
                 'end_time' : end_time,
                 'duration' : end_time - start_time,
-                'start_time_formatted': self.format_time(start_time),
-                'end_time_formatted' : self.format_time(end_time)
+                'start_formatted': self.format_time(start_time),
+                'end_formatted' : self.format_time(end_time)
             }
         
         except Exception as e:

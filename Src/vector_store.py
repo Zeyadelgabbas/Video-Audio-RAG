@@ -82,7 +82,7 @@ class VectorStore:
                     all_metadatas.append(metadata)
 
             if not all_texts:
-                print(f"  ⚠️  No valid text chunks to add for {video_name}")
+                print(f"  No valid text chunks to add for {video_name}")
                 return []
             
             ids = self.vectorstore.add_texts(
