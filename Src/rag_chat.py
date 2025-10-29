@@ -16,14 +16,6 @@ class RAGChat:
     """
     Handles conversational question-answering using RAG (Retrieval Augmented Generation).
     
-    What is RAG?
-    1. User asks a question
-    2. Retrieve relevant chunks from vector database (semantic search)
-    3. Send question + retrieved context to LLM
-    4. LLM generates answer based on the context
-    5. Include source citations (video name + timestamp)
-    
-    This uses the NEW LangChain LCEL (LangChain Expression Language) approach!
     """
     
     def __init__(self, vector_store: VectorStore):
@@ -56,10 +48,8 @@ class RAGChat:
     
     def _create_rag_chain(self):
         """
-        Create RAG chain using new LCEL approach.
-        
-        LCEL = LangChain Expression Language (new way to build chains)
-        Uses the | operator to chain components together.
+        Create RAG chain using  LCEL approach.
+ 
         """
         
         # Create the prompt template
@@ -131,19 +121,8 @@ Context from videos:
             question: User's question
             
         Returns:
-            Dictionary with:
-            {
-                'answer': 'The answer text...',
-                'sources': [
-                    {
-                        'video_name': 'tutorial.mp4',
-                        'start_time': '00:05:30',
-                        'end_time': '00:15:30',
-                        'text_preview': 'First 100 chars of source...'
-                    },
-                    ...
-                ]
-            }
+            Dictionary with answer and source
+            
         """
         logging.info(f"User question: {question}")
         
