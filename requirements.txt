@@ -2,7 +2,7 @@ openai
 langchain_openai
 langchain
 langchain_community
-langchain_chroma
+langchain-chroma
 openai-whisper
 chromadb
 streamlit
